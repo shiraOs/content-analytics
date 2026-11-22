@@ -1,0 +1,20 @@
+{
+  "name": "content-analytics-tiktok-insights",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "auth": "node src/auth.ts",
+    "status": "node src/collect.ts --status",
+    "collect": "node src/collect.ts",
+    "import:export": "node src/import-export.ts",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "typescript": "7.0.2"
+  }
+}

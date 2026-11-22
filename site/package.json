@@ -1,0 +1,13 @@
+{
+  "name": "content-analytics-site-insights",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "auth": "node src/auth.ts",
+    "check": "node src/check.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "content-analytics-content-collector",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "schema": "node scripts/schema.ts",
+    "secrets": "node scripts/put-secrets.ts",
+    "import:history": "node scripts/import-history.ts",
+    "import:exports": "node scripts/import-exports.ts",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "typescript": "7.0.2",
+    "wrangler": "4.166.0"
+  }
+}

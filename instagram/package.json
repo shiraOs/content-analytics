@@ -1,0 +1,30 @@
+{
+  "name": "content-analytics-instagram-proof",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "auth": "node src/auth.ts",
+    "fetch": "node src/cli.ts",
+    "refresh": "node src/auth.ts refresh",
+    "refresh-if-due": "node src/auth.ts refresh-if-due",
+    "test": "INSTAGRAM_USERNAME=creator.example node --test test/*.test.ts",
+    "mcp": "node src/mcp.ts",
+    "typecheck": "tsc --noEmit",
+    "verify:mcp": "node scripts/verify-mcp.ts",
+    "collect": "node src/collect.ts",
+    "import:history": "node src/import-history.ts",
+    "verify:history": "node scripts/verify-history.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "22.20.2",
+    "typescript": "7.0.2"
+  }
+}

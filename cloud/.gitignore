@@ -1,0 +1,16 @@
+.client.json
+.credentials.json
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+data/
+node_modules/
+*.log
+
+# History, mutex files and SQLite sidecars (even if moved outside data/)
+*.sqlite
+*.sqlite-*
+*.sqlite.lock*

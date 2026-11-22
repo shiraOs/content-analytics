@@ -1,0 +1,28 @@
+{
+  "name": "content-analytics-youtube-insights",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "auth": "node src/auth.ts",
+    "status": "node src/cli.ts status",
+    "videos": "node src/cli.ts videos",
+    "collect": "node src/collect.ts",
+    "weekly": "node src/weekly.ts",
+    "mcp": "node src/mcp.ts",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "verify:mcp": "node scripts/verify-mcp.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.4.0",
+    "@types/node": "22.20.2",
+    "typescript": "7.0.2"
+  }
+}

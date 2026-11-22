@@ -1,0 +1,13 @@
+.credentials.json
+.credentials.json.tmp
+.env
+.env.*
+!.env.example
+data/
+node_modules/
+*.log
+
+# History, mutex files and SQLite sidecars (even if moved outside data/)
+*.sqlite
+*.sqlite-*
+*.sqlite.lock*

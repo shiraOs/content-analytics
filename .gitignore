@@ -1,0 +1,22 @@
+# Sign-ins and keys: never commit these
+.client.json
+.credentials.json
+.credentials.json.tmp
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+
+# Local history and downloaded analytics files
+data/
+*.sqlite
+*.sqlite-*
+*.sqlite.lock*
+
+# Tools and installs
+node_modules
+.wrangler/
+.claude/
+*.log
+.DS_Store

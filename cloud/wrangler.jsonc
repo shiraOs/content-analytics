@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "content-collector",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  // Workers Free: each invocation may make 50 outside calls, so every 5 minutes on Sunday
+  // 05:00–06:55 UTC one piece runs (YouTube, TikTok, Instagram listing, then 5 reels at a time).
+  "triggers": { "crons": ["*/5 5-6 * * SUN"] },
+  "d1_databases": [
+    { "binding": "YOUTUBE_DB", "database_name": "content-youtube", "database_id": "<your-d1-database-id>" },
+    { "binding": "INSTAGRAM_DB", "database_name": "content-instagram", "database_id": "<your-d1-database-id>" },
+    { "binding": "TIKTOK_DB", "database_name": "content-tiktok", "database_id": "<your-d1-database-id>" },
+    // LinkedIn analytics downloads, imported from your computer with `npm run import:exports` (no cron job).
+    { "binding": "LINKEDIN_DB", "database_name": "content-linkedin", "database_id": "<your-d1-database-id>" },
+    // Your website: Cloudflare Web Analytics, Search Console, GA4, Bing (src/site), collected after Instagram.
+    { "binding": "SITE_DB", "database_name": "content-site", "database_id": "<your-d1-database-id>" }
+  ],
+  // Which website to read (not secret). Leave SITE_DB unbound to skip the site job.
+  "vars": { "INSTAGRAM_USERNAME": "<your-instagram-username>",
+    "SITE_HOST": "example.com", "SITE_CF_ACCOUNT_ID": "<cloudflare-account-id>", "SITE_CF_SITE_TAG": "<web-analytics-site-tag>", "SITE_GA4_PROPERTY": "<ga4-property-id>",
+    "SITE_BIO_PATHS": "/ig/,/tt/,/yt/,/in/" },
+  "observability": { "enabled": true }
+  // Secrets (npm run secrets): YOUTUBE_CLIENT, YOUTUBE_CREDENTIAL, INSTAGRAM_CREDENTIAL,
+  // TIKTOK_CLIENT, TIKTOK_CREDENTIAL, DIGEST_KEY, SITE_CF_TOKEN, SITE_GOOGLE_CREDENTIAL, SITE_BING_KEY.
+}

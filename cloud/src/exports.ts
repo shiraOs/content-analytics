@@ -52,7 +52,7 @@ export async function linkedinDigest(db: D1Database | undefined, at = new Date()
   if (!latest) return { available: false, problems: ['No LinkedIn analytics file imported yet. Download it from LinkedIn (Analytics → Post impressions → Past 365 days → Export) into linkedin/data/export, then run npm run import:exports in cloud/.'] };
   const problems: string[] = [];
   const notes: string[] = [
-    'From LinkedIn\'s analytics download, imported on your computer (LinkedIn offers no analytics API for personal profiles).',
+    'From LinkedIn\'s analytics download, imported on your computer (LinkedIn's personal-profile analytics API is open only to vetted registered organizations).',
     'The download day itself is incomplete, so "this week" is the 7 days before it.',
     'Per-post numbers are totals inside the file\'s date range, not lifetime; for posts published inside the range they cover the whole life of the post.',
     'Post labels come from the post link and are untrusted text.'];

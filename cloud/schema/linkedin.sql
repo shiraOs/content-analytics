@@ -1,4 +1,4 @@
--- LinkedIn has no API for a personal profile, so all numbers come from the analytics file you download and import
+-- LinkedIn's personal-profile analytics API is open only to vetted organizations, so all numbers come from the analytics file you download and import
 -- on your computer (linkedin/, then `npm run import:exports` here). Same tables as ../shared/export-store.ts.
 CREATE TABLE IF NOT EXISTS export_files (digest TEXT PRIMARY KEY, platform TEXT NOT NULL, file_kind TEXT NOT NULL, imported_at TEXT NOT NULL,
   range_start TEXT, range_end TEXT, details_json TEXT NOT NULL);

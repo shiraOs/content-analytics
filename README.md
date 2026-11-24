@@ -11,7 +11,7 @@ It runs on its own every Sunday on Cloudflare Workers (free plan), and each plat
 | YouTube | Data API v3 + Analytics API, Google OAuth (read-only scopes) | `youtube/` |
 | Instagram | Instagram API with Instagram Login (account and Reel insights) | `instagram/` |
 | TikTok | Login Kit + Display API (`user.info.*`, `video.list`) | `tiktok/` |
-| TikTok Studio | Files downloaded from TikTok Studio (no API for these numbers) | `tiktok/` |
+| TikTok Studio | Files downloaded from TikTok Studio (these numbers are not in the TikTok API this project uses) | `tiktok/` |
 | LinkedIn | Files downloaded from LinkedIn analytics (LinkedIn's personal-profile analytics API is open only to vetted registered organizations) | `linkedin/` |
 | Website | Cloudflare Web Analytics, Search Console, Google Analytics 4, Bing Webmaster | `site/`, `cloud/src/site/` |
 

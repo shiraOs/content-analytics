@@ -12,7 +12,7 @@ It runs on its own every Sunday on Cloudflare Workers (free plan), and each plat
 | Instagram | Instagram API with Instagram Login (account and Reel insights) | `instagram/` |
 | TikTok | Login Kit + Display API (`user.info.*`, `video.list`) | `tiktok/` |
 | TikTok Studio | Files downloaded from TikTok Studio (no API for these numbers) | `tiktok/` |
-| LinkedIn | Files downloaded from LinkedIn analytics (no API for personal profiles) | `linkedin/` |
+| LinkedIn | Files downloaded from LinkedIn analytics (LinkedIn's personal-profile analytics API is open only to vetted registered organizations) | `linkedin/` |
 | Website | Cloudflare Web Analytics, Search Console, Google Analytics 4, Bing Webmaster | `site/`, `cloud/src/site/` |
 
 ## How it fits together
